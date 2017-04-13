@@ -1,5 +1,6 @@
 const telegramBot = require('node-telegram-bot-api'),
-      token       = 'YOUR-API-KEY-HERE',
+      dotenv      = require('dotenv').config(),
+      token       = process.env.TELEGRAM_API,
       bot         = new telegramBot(token, { polling: true });
 
 bot.on('message', function(msg) {
