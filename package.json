@@ -4,6 +4,6 @@
     "dotenv": "^4.0.0",
     "global": "^4.3.1",
     "node-telegram-bot-api": "^0.27.0",
-    "request": "^2.81.0"
+    "superagent": "^3.5.2"
   }
 }
