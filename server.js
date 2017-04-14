@@ -16,5 +16,7 @@ let url = 'https://explainshell.com/'+'explain?cmd=cd';
 
 request.get(url, function(err, res){
   if (err) throw err;
-  console.log(res.text);
+  let $ = cheerio.load(res.text);
+  let answer = $('.help-box').text();
+  console.log(answer);
 });
