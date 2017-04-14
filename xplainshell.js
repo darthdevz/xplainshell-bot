@@ -7,16 +7,14 @@ const telegramBot = require('node-telegram-bot-api'),
       bot         = new telegramBot(token, { polling: true });
 
 bot.on('message', (msg) => {
-  let userID = msg.chat.id;
-  bot.sendMessage(userID, 'I\'m working!');
-});
+  let userID      = msg.chat.id;
+  let messageUser = msg.text;
+  let url         = 'https://explainshell.com/explain?cmd='+ messageUser;
 
-//Concatenar com msg do usuário
-let url = 'https://explainshell.com/'+'explain?cmd=cd';
-
-request.get(url, function(err, res){
-  if (err) throw err;
-  let $ = cheerio.load(res.text);
-  let answer = $('.help-box').text();
-  console.log(answer);
+  request.get(url, function(err, res){
+    if (err) throw err;
+    let $ = cheerio.load(res.text);
+    let answer = $('.help-box').text();
+    bot.sendMessage(userID, answer);
+  });
 });
