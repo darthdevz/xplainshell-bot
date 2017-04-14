@@ -1,7 +1,6 @@
 const telegramBot = require('node-telegram-bot-api'),
       dotenv      = require('dotenv').config(),
       request     = require('superagent'),
-//      request     = require('request'),
       cheerio     = require('cheerio'),
       token       = process.env.TELEGRAM_API,
       bot         = new telegramBot(token, { polling: true });
