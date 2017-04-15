@@ -10,10 +10,15 @@ bot.on('message', (msg) => {
   let messageUser = msg.text;
   let url         = 'https://explainshell.com/explain?cmd='+ messageUser;
 
-  request.get(url, function(err, res){
+  request.get(url, (err, res) => {
     if (err) throw err;
-    let $ = cheerio.load(res.text);
-    let answer = $('.help-box').text();
-    bot.sendMessage(userID, answer);
+
+    let $            = cheerio.load(res.text);
+    let answer       = $('.help-box').text();
+    let errorMessage = "Sorry, this command is invalid or unknown. Try another command."
+
+    bot.sendMessage(userID, answer).catch((error) => {
+      bot.sendMessage(userID, errorMessage);
+    });
   });
 });
