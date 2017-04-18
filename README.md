@@ -16,4 +16,4 @@ node server.js
 ```
 # License
 
-...
+GNU GENERAL PUBLIC LICENSE. You can read the [license](https://github.com/darthdevz/xplainshell-bot/blob/master/LICENSE) file to more information.
