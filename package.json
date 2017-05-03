@@ -1,9 +1,29 @@
 {
+  "name": "xplainshell-bot",
+  "version": "0.1.0",
+  "description": "Write down a command line with our Bot to see the help text that corresponds to each argument of your command",
+  "engines": {
+    "node": "6.10.2"
+  },
+  "main": "xplainshell.js",
+  "scripts": {
+    "start": "node xplainshell.js"
+  },
   "dependencies": {
     "cheerio": "^0.22.0",
     "dotenv": "^4.0.0",
     "global": "^4.3.1",
     "node-telegram-bot-api": "^0.27.0",
     "superagent": "^3.5.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darthdevz/xplainshell-bot"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "telegram-bot"
+  ],
+  "license": "GNU General Public License v3.0"
 }
