@@ -3,7 +3,7 @@ const telegramBot = require('node-telegram-bot-api'),
       request     = require('superagent'),
       cheerio     = require('cheerio'),
       token       = process.env.TELEGRAM_API,
-      bot         = new telegramBot(token, { polling: true });
+      bot         = new telegramBot(token);
 
 bot.on('message', (msg) => {
   let userID      = msg.chat.id,
