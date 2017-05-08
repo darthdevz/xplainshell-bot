@@ -3,7 +3,12 @@ const telegramBot = require('node-telegram-bot-api'),
       request     = require('superagent'),
       cheerio     = require('cheerio'),
       token       = process.env.TELEGRAM_API,
-      bot         = new telegramBot(token, { polling: false });
+      bot         = new telegramBot(token, {webHook: { port: process.env.PORT } });
+
+const url = process.env.APP_URL || 'https://xplainshell-bot.herokuapp.com';
+
+// Isso faz setup do webhook nos servidores do telegram
+bot.setWebHook(`${url}/bot${token}`);
 
 bot.on('message', (msg) => {
   let userID      = msg.chat.id,
