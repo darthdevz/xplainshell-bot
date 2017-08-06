@@ -1,9 +1,11 @@
+"use strict";
+
 const telegramBot = require('node-telegram-bot-api'),
       dotenv      = require('dotenv').config(),
       request     = require('superagent'),
       cheerio     = require('cheerio'),
       token       = process.env.TELEGRAM_API,
-      bot         = new telegramBot(token, {webHook: { port: process.env.PORT } });
+      bot         = new telegramBot(token, {webHook: { port: process.env.PORT }});
 
 const url = process.env.APP_URL || 'https://xplainshell-bot.herokuapp.com';
 
@@ -13,7 +15,7 @@ bot.setWebHook(`${url}/bot${token}`);
 bot.on('message', (msg) => {
   let userID      = msg.chat.id,
       messageUser = msg.text,
-      url         = 'https://explainshell.com/explain?cmd='+ messageUser;
+      url         = 'https:\/\/explainshell.com/explain?cmd='+ messageUser;
 
   request.get(url, (err, res) => {
     if (err) throw err;

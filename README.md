@@ -12,7 +12,7 @@ git clone https://github.com/darthdevz/xplainshell-bot.git
 yarn
 
 # Run this file to interact with Bot
-node server.js
+node xplainshell.js
 ```
 # License
 
